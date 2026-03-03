@@ -1,26 +1,20 @@
-<?php 
+<?php
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
 $banco = "estoque";
 
-//conexão com o banco de dados
+// Conexão com o banco de dados usando PDO
 try {
-    //tentativa de conexão com o banco de dados
-    //codigo...
-    //clase PDO é usada para acessar varios tipos de banco de dados usando a mesma função  
-    /*DSN DATA SOURCE NAME é a string de conexão usada para especificar o tipo de banco de dados, 
-    o host e o nome do banco de dados*/ 
-    $conexao = new PDO("mysql:host=$servidor; dbname=$banco", $usuario, $senha);
+    $conexao = new PDO("mysql:host=$servidor; dbname=$banco; charset=utf8", $usuario, $senha);
 
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexao-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //echo "Conexão com o banco de dados estabelecida com sucesso!";
-
+    //echo "Conexão com o banco de dados estabelecida com sucesso";
+    // Configura o modo de erro do PDO para exceção
 } catch (\Throwable $erro) {
-    //lançavel serve para qualquer tipo de erro ou exceção
-    //captura de erro caso a conexão falhe  
-    die("Erro ao conectar com o banco de dados: " . $erro->getMessage());
+    
+    die("Erro ao conectar com o banco de dados: " . $erro ->getMessage());
+
+    
 }
-
-
