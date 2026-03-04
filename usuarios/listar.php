@@ -48,6 +48,9 @@ require_once BASE_PATH . '/includes/cabecalho.php';
                         </td>
                     </tr>
 <?php endforeach ?>
+
+
+
             </tbody>
         </table>
     </div>
