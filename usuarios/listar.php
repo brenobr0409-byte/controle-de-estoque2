@@ -52,6 +52,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
 
 
             </tbody>
+
         </table>
     </div>
 </section>
